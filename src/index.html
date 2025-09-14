@@ -1,0 +1,369 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Podomodo – Focus Timer</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="theme-color" content="#0b1220" />
+    <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-geist">
+      .font-geist {
+        font-family: "Geist", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-roboto">
+      .font-roboto {
+        font-family: "Roboto", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-montserrat">
+      .font-montserrat {
+        font-family: "Montserrat", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-poppins">
+      .font-poppins {
+        font-family: "Poppins", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap" />
+    <style id="all-fonts-style-font-playfair">
+      .font-playfair {
+        font-family: "Playfair Display", serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-instrument-serif">
+      .font-instrument-serif {
+        font-family: "Instrument Serif", serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap" />
+    <style id="all-fonts-style-font-merriweather">
+      .font-merriweather {
+        font-family: "Merriweather", serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-bricolage">
+      .font-bricolage {
+        font-family: "Bricolage Grotesque", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-jakarta">
+      .font-jakarta {
+        font-family: "Plus Jakarta Sans", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-manrope">
+      .font-manrope {
+        font-family: "Manrope", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-space-grotesk">
+      .font-space-grotesk {
+        font-family: "Space Grotesk", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-work-sans">
+      .font-work-sans {
+        font-family: "Work Sans", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap" />
+    <style id="all-fonts-style-font-pt-serif">
+      .font-pt-serif {
+        font-family: "PT Serif", serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-geist-mono">
+      .font-geist-mono {
+        font-family: "Geist Mono", monospace !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" />
+    <style id="all-fonts-style-font-space-mono">
+      .font-space-mono {
+        font-family: "Space Mono", monospace !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-quicksand">
+      .font-quicksand {
+        font-family: "Quicksand", sans-serif !important;
+      }
+    </style>
+    <link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-nunito">
+      .font-nunito {
+        font-family: "Nunito", sans-serif !important;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen text-white antialiased selection:bg-white/20 selection:text-white"
+    style="font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; padding-bottom: env(safe-area-inset-bottom)"
+  >
+    <!-- Background -->
+    <div class="fixed inset-0 -z-10">
+      <img id="bgImage" src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&amp;w=1974&amp;auto=format&amp;fit=crop" alt="City at dusk" class="h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#1a1630]/60 via-[#0b1220]/70 to-[#0b1220]/80"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(1000px_500px_at_50%_20%,rgba(120,119,198,0.20),transparent_60%)]"></div>
+    </div>
+
+    <!-- Frame -->
+    <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6">
+      <!-- Top Bar -->
+      <header class="flex items-start justify-between py-6">
+        <div class="flex flex-col gap-1">
+          <div class="text-2xl md:text-3xl tracking-tight font-medium font-space-grotesk">study with me</div>
+          <div class="text-xs md:text-sm text-white/70">by anno</div>
+        </div>
+      </header>
+
+      <!-- Center -->
+      <main class="flex flex-1 items-center justify-center">
+        <div class="flex w-full max-w-3xl flex-col items-center">
+          <!-- Mode Switch -->
+          <div class="flex items-center gap-3 mb-8">
+            <button data-mode="pomodoro" class="mode-btn rounded-full border border-white/20 bg-white/90 text-[#0b1220] px-3 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm md:text-base font-medium shadow-sm hover:bg-white transition-colors">
+              pomodoro
+            </button>
+            <button data-mode="short" class="mode-btn rounded-full border border-white/20 bg-white/5 px-3 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm md:text-base font-medium hover:bg-white/10 transition-colors text-white">
+              short break
+            </button>
+            <button data-mode="long" class="mode-btn rounded-full border border-white/20 bg-white/5 px-3 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm md:text-base font-medium hover:bg-white/10 transition-colors text-white">long break</button>
+          </div>
+
+          <!-- Timer -->
+          <h1 id="time" class="tracking-tight text-[64px] sm:text-[110px] md:text-[140px] lg:text-[160px] font-semibold leading-none drop-shadow-xl font-space-grotesk">20:00</h1>
+
+          <!-- Controls -->
+          <div class="mt-8 flex flex-wrap sm:flex-nowrap items-center justify-center gap-4">
+            <button
+              id="startPauseBtn"
+              class="group inline-flex items-center gap-2 rounded-full bg-white/90 text-[#0b1220] px-5 py-2 sm:px-8 sm:py-3 text-sm sm:text-lg font-semibold shadow-sm ring-1 ring-white/10 hover:bg-white transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="play"
+                class="lucide lucide-play h-4 w-4 sm:h-5 sm:w-5"
+              >
+                <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg
+              ><span>start</span>
+            </button>
+
+            <button id="resetBtn" class="rounded-full bg-white/10 hover:bg-white/15 transition-colors p-2 sm:p-3 backdrop-blur-md border border-white/10">
+              <span class="sr-only">Reset</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="refresh-ccw"
+                class="lucide lucide-refresh-ccw h-4 w-4 sm:h-5 sm:w-5"
+              >
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                <path d="M16 16h5v5"></path>
+              </svg>
+            </button>
+
+            <button id="settingsBtn" class="rounded-full bg-white/10 hover:bg-white/15 transition-colors p-2 sm:p-3 backdrop-blur-md border border-white/10">
+              <span class="sr-only">Settings</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="settings"
+                class="lucide lucide-settings h-4 w-4 sm:h-5 sm:w-5"
+              >
+                <path
+                  d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+                ></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Hint -->
+          <p class="mt-4 text-xs sm:text-sm text-white/60">Space to start/pause • R to reset • 1/2/3 to switch modes</p>
+        </div>
+      </main>
+
+      <!-- Bottom Bar -->
+      <footer class="relative mb-6 flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-4">
+        <!-- Left: Player + Community -->
+        <div id="spotifyWrapper" class="flex flex-col gap-4">
+          <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl backdrop-blur w-full relative">
+            <iframe
+              id="spotifyFrame"
+              style="border: 0"
+              src="https://open.spotify.com/embed/playlist/0LUZL9FqBwI6eeTN8BvJzI?utm_source=generator"
+              width="100%"
+              height="152"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              class="block"
+            ></iframe>
+            <button id="changePlaylistBtn" class="absolute top-2 right-2 rounded-lg bg-black/50 text-white px-2 py-1 text-xs hover:bg-black/70">Change Playlist</button>
+          </div>
+        </div>
+
+        <!-- Right Fullscreen -->
+        <div class="flex items-center gap-3 ml-auto">
+          <button id="fsMini" class="rounded-2xl hidden md:block bg-white/10 hover:bg-white/15 p-3 border border-white/10 backdrop-blur">
+            <span class="sr-only">Fullscreen</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="expand"
+              class="lucide lucide-expand h-5 w-5"
+            >
+              <path d="m15 15 6 6"></path>
+              <path d="m15 9 6-6"></path>
+              <path d="M21 16v5h-5"></path>
+              <path d="M21 8V3h-5"></path>
+              <path d="M3 16v5h5"></path>
+              <path d="m3 21 6-6"></path>
+              <path d="M3 8V3h5"></path>
+              <path d="M9 9 3 3"></path>
+            </svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="fixed inset-0 z-50 hidden items-center justify-center">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div class="relative w-full max-w-lg rounded-2xl border border-white/10 bg-[#0e1326]/95 p-6 shadow-2xl flex flex-col space-y-4">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl tracking-tight font-semibold">Settings</h2>
+          <button id="closeSettings" class="rounded-lg p-2 hover:bg-white/10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="x"
+              class="lucide lucide-x h-5 w-5"
+            >
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <label for="pomodoroInput" class="block text-sm text-white/70 mb-2">Pomodoro (min)</label>
+            <div class="flex items-center gap-2">
+              <input id="pomodoroInput" type="number" min="1" max="120" value="20" class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <label for="shortInput" class="block text-sm text-white/70 mb-2">Short break (min)</label>
+            <input id="shortInput" type="number" min="1" max="60" value="5" class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <label for="longInput" class="block text-sm text-white/70 mb-2">Long break (min)</label>
+            <input id="longInput" type="number" min="1" max="90" value="15" class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <label for="bgInput" class="block text-sm text-white/70 mb-2">Background URL</label>
+          <input id="bgInput" type="text" placeholder="https://..." class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <label for="bgUpload" class="block text-sm text-white/70 mb-2">Background Image</label>
+          <input id="bgUpload" type="file" accept="image/*" class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+        </div>
+        <div class="mt-6 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <label class="text-sm text-white/80">End chime</label>
+            <button id="testSound" class="rounded-lg bg-white/10 hover:bg-white/15 p-2 border border-white/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="volume-2"
+                class="lucide lucide-volume-2 h-5 w-5"
+              >
+                <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path>
+                <path d="M16 9a5 5 0 0 1 0 6"></path>
+                <path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="cancelSettings" class="rounded-lg px-4 py-2 bg-white/10 hover:bg-white/15 border border-white/10">Cancel</button>
+            <button id="saveSettings" class="rounded-lg px-4 py-2 bg-white text-[#0b1220] font-semibold hover:opacity-90">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="playlistModal" class="fixed inset-0 hidden items-center justify-center z-50">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div class="relative w-full max-w-md bg-[#0e1326]/95 rounded-xl p-6 border border-white/10 shadow-2xl">
+        <h2 class="text-lg font-semibold mb-3">Masukkan URL Playlist</h2>
+        <input id="playlistInput" type="text" placeholder="https://open.spotify.com/playlist/..." class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 mb-4 outline-none focus:ring-2 focus:ring-violet-500" />
+        <div class="flex justify-end gap-2">
+          <button id="cancelPlaylist" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20">Batal</button>
+          <button id="savePlaylist" class="px-4 py-2 rounded-lg bg-white text-[#0b1220] font-semibold hover:opacity-90">Simpan</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
