@@ -1,5 +1,8 @@
 # Podomodoro | Focus Timer
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dbacc02e-fb88-427d-915d-fabc1f9ac7fd" />
+
+
 A modern, minimal Pomodoro timer built with web technologies and wrapped in Electron. It features customizable session lengths, beautiful backgrounds (URL or image upload), Spotify playlist embedding, desktop notifications, and a custom frameless title bar.
 
 ## Features
@@ -81,5 +84,5 @@ pomodoro-timer/
 
 ## License
 
-MIT (or your preferred license).
+MIT.
 
