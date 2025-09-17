@@ -2,117 +2,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Podomodo – Focus Timer</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Podomodoro | Focus Timer</title>
     <link href="./output.css" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <meta name="theme-color" content="#0b1220" />
-    <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-geist">
-      .font-geist {
-        font-family: "Geist", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-roboto">
-      .font-roboto {
-        font-family: "Roboto", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-montserrat">
-      .font-montserrat {
-        font-family: "Montserrat", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-poppins">
-      .font-poppins {
-        font-family: "Poppins", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap" />
-    <style id="all-fonts-style-font-playfair">
-      .font-playfair {
-        font-family: "Playfair Display", serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-instrument-serif">
-      .font-instrument-serif {
-        font-family: "Instrument Serif", serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap" />
-    <style id="all-fonts-style-font-merriweather">
-      .font-merriweather {
-        font-family: "Merriweather", serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-bricolage">
-      .font-bricolage {
-        font-family: "Bricolage Grotesque", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
-    <style id="all-fonts-style-font-jakarta">
-      .font-jakarta {
-        font-family: "Plus Jakarta Sans", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" />
-    <style id="all-fonts-style-font-manrope">
-      .font-manrope {
-        font-family: "Manrope", sans-serif !important;
-      }
-    </style>
+
     <link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
     <style id="all-fonts-style-font-space-grotesk">
       .font-space-grotesk {
         font-family: "Space Grotesk", sans-serif !important;
       }
     </style>
-    <link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
-    <style id="all-fonts-style-font-work-sans">
-      .font-work-sans {
-        font-family: "Work Sans", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap" />
-    <style id="all-fonts-style-font-pt-serif">
-      .font-pt-serif {
-        font-family: "PT Serif", serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-geist-mono">
-      .font-geist-mono {
-        font-family: "Geist Mono", monospace !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" />
-    <style id="all-fonts-style-font-space-mono">
-      .font-space-mono {
-        font-family: "Space Mono", monospace !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" />
-    <style id="all-fonts-style-font-quicksand">
-      .font-quicksand {
-        font-family: "Quicksand", sans-serif !important;
-      }
-    </style>
-    <link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" />
-    <style id="all-fonts-style-font-nunito">
-      .font-nunito {
-        font-family: "Nunito", sans-serif !important;
-      }
-    </style>
   </head>
   <body
     class="min-h-screen text-white antialiased selection:bg-white/20 selection:text-white"
-    style="font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; padding-bottom: env(safe-area-inset-bottom)"
+    style="font-family: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; padding-bottom: env(safe-area-inset-bottom)"
   >
     <!-- Background -->
     <div class="fixed inset-0 -z-10">
@@ -124,10 +28,22 @@
     <!-- Frame -->
     <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6">
       <!-- Top Bar -->
-      <header class="flex items-start justify-between py-6">
-        <div class="flex flex-col gap-1">
+      <header class="flex items-start justify-between py-6" style="-webkit-app-region: drag">
+        <div class="flex flex-col gap-1 select-none">
           <div class="text-2xl md:text-3xl tracking-tight font-medium font-space-grotesk">study with me</div>
           <div class="text-xs md:text-sm text-white/70">by anno</div>
+        </div>
+        <!-- Custom Title Bar Controls -->
+        <div class="flex items-center gap-1 md:gap-2 ml-4" style="-webkit-app-region: no-drag">
+          <button id="winMin" class="rounded-md p-2 hover:bg-white/10" aria-label="Minimize">
+            <i data-lucide="minus" class="h-4 w-4"></i>
+          </button>
+          <button id="winMax" class="rounded-md p-2 hover:bg-white/10" aria-label="Maximize or Restore">
+            <i id="winMaxIcon" data-lucide="square" class="h-4 w-4"></i>
+          </button>
+          <button id="winClose" class="rounded-md p-2 hover:bg-red-500/80 hover:text-white" aria-label="Close">
+            <i data-lucide="x" class="h-4 w-4"></i>
+          </button>
         </div>
       </header>
 
@@ -319,7 +235,10 @@
         </div>
         <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
           <label for="bgUpload" class="block text-sm text-white/70 mb-2">Background Image</label>
-          <input id="bgUpload" type="file" accept="image/*" class="w-full rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+          <div class="flex items-center gap-2">
+            <input id="bgUpload" type="file" accept="image/*" class="flex-1 rounded-lg bg-white/10 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-violet-500" />
+            <button id="bgChooseBtn" class="whitespace-nowrap rounded-lg px-3 py-2 bg-white/10 hover:bg-white/15 border border-white/10">Choose Image</button>
+          </div>
         </div>
         <div class="mt-6 flex items-center justify-between">
           <div class="flex items-center gap-3">

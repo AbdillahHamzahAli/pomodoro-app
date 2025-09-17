@@ -34,7 +34,13 @@ const fsMini = document.getElementById("fsMini");
 const bgImage = document.getElementById("bgImage");
 const bgInput = document.getElementById("bgInput");
 const bgUpload = document.getElementById("bgUpload");
+const bgChooseBtn = document.getElementById("bgChooseBtn");
 const spotifyWrapper = document.getElementById("spotifyWrapper");
+// Custom title bar controls (Electron)
+const winMin = document.getElementById("winMin");
+const winMax = document.getElementById("winMax");
+const winClose = document.getElementById("winClose");
+const winMaxIcon = document.getElementById("winMaxIcon");
 
 // Helpers
 function formatTime(s) {
@@ -85,17 +91,42 @@ function beep() {
   o.stop(ctx.currentTime + 0.4);
 }
 
+// Notifications
+function requestNotificationPermission() {
+  try {
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission?.();
+    }
+  } catch (_) {}
+}
+
+function notifyEnd(mode) {
+  try {
+    if ("Notification" in window && Notification.permission === "granted") {
+      const title = mode === "pomodoro" ? "Pomodoro selesai" : "Break selesai";
+      const body = mode === "pomodoro" ? "Waktunya istirahat sebentar." : "Ayo kembali fokus!";
+      const n = new Notification(title, {
+        body,
+        silent: true,
+      });
+      // Auto-close after a few seconds
+      setTimeout(() => n.close?.(), 5000);
+    }
+  } catch (_) {}
+}
+
 // Timer controls
 function tick() {
   if (remaining > 0) {
     remaining -= 1;
     renderTime();
-    document.title = `${formatTime(remaining)} • Podomodo`;
+    document.title = `${formatTime(remaining)} • Pomodoro | Focus Timer`;
   } else {
     clearInterval(timerId);
     running = false;
     togglePlayIcon(false);
     beep();
+    notifyEnd(currentMode);
   }
 }
 
@@ -116,7 +147,7 @@ function reset() {
   pause();
   remaining = modes[currentMode];
   renderTime();
-  document.title = "Podomodo – Focus Timer";
+  document.title = "Pomodoro | Focus Timer";
 }
 
 function switchMode(mode) {
@@ -154,6 +185,10 @@ function openSettings() {
   pomodoroInput.value = Math.round(modes.pomodoro / 60);
   shortInput.value = Math.round(modes.short / 60);
   longInput.value = Math.round(modes.long / 60);
+  // Prefill background URL with current background
+  if (bgInput) {
+    bgInput.value = bgImage?.src || "";
+  }
   settingsModal.classList.remove("hidden");
   setTimeout(() => {
     settingsModal.classList.add("flex");
@@ -201,6 +236,9 @@ fsMini.addEventListener("click", toggleFullscreen);
 bgInput?.addEventListener("change", () => {
   if (bgInput.value.trim()) {
     bgImage.src = bgInput.value.trim();
+    try {
+      localStorage.setItem("bgImage", bgInput.value.trim());
+    } catch (_) {}
   }
 });
 
@@ -211,8 +249,32 @@ bgUpload?.addEventListener("change", () => {
     const reader = new FileReader();
     reader.onload = (e) => {
       bgImage.src = e.target.result;
+      try {
+        localStorage.setItem("bgImage", e.target.result);
+      } catch (_) {}
     };
     reader.readAsDataURL(file);
+  }
+});
+
+// Electron native file dialog
+bgChooseBtn?.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const api = window.api;
+  if (api && typeof api.chooseBackground === "function") {
+    const dataUrl = await api.chooseBackground();
+    if (dataUrl) {
+      bgImage.src = dataUrl;
+      try {
+        localStorage.setItem("bgImage", dataUrl);
+      } catch (_) {}
+      // Reflect into inputs for consistency
+      if (bgInput) bgInput.value = dataUrl.startsWith("http") ? dataUrl : "";
+      if (bgUpload) bgUpload.value = "";
+    }
+  } else {
+    // Fallback: trigger the regular file input
+    bgUpload?.click();
   }
 });
 
@@ -224,11 +286,23 @@ function toggleSpotify() {
   }
 }
 
+// Background persistence
+function loadBackgroundFromStorage() {
+  try {
+    const saved = localStorage.getItem("bgImage");
+    if (saved) {
+      bgImage.src = saved;
+    }
+  } catch (_) {}
+}
+
 // Init
 setActiveModeButton();
 renderTime();
 togglePlayIcon(false);
 toggleSpotify();
+loadBackgroundFromStorage();
+requestNotificationPermission();
 
 window.addEventListener("online", toggleSpotify);
 window.addEventListener("offline", toggleSpotify);
@@ -239,6 +313,35 @@ const playlistInput = document.getElementById("playlistInput");
 const cancelPlaylist = document.getElementById("cancelPlaylist");
 const savePlaylist = document.getElementById("savePlaylist");
 const spotifyFrame = document.getElementById("spotifyFrame");
+
+// Wire window controls for Electron
+function updateMaxIcon(isMaximized) {
+  if (!winMaxIcon) return;
+  // Replace icon element to re-render with lucide
+  const parent = winMaxIcon.parentElement;
+  const newIcon = document.createElement("i");
+  newIcon.id = "winMaxIcon";
+  newIcon.setAttribute("data-lucide", isMaximized ? "copy" : "square");
+  newIcon.className = "h-4 w-4";
+  winMaxIcon.replaceWith(newIcon);
+  // Re-create lucide icons
+  lucide.createIcons({ attrs: { "stroke-width": 1.5 } });
+}
+
+if (window.api?.windowControls) {
+  const wc = window.api.windowControls;
+  winMin?.addEventListener("click", () => wc.minimize());
+  winClose?.addEventListener("click", () => wc.close());
+  winMax?.addEventListener("click", async () => {
+    const result = await wc.toggleMaximize();
+    // result may be the new isMaximized state
+    if (typeof result === "boolean") updateMaxIcon(result);
+  });
+  // Sync on state events from main
+  wc.onState((state) => updateMaxIcon(!!state?.isMaximized));
+  // Initialize state on load
+  wc.getState().then((state) => updateMaxIcon(!!state?.isMaximized));
+}
 
 // buka modal
 changePlaylistBtn.addEventListener("click", () => {
@@ -258,7 +361,6 @@ playlistModal.addEventListener("click", (e) => {
   if (e.target === playlistModal) closePlaylistModal();
 });
 
-// simpan playlist baru
 savePlaylist.addEventListener("click", () => {
   if (playlistInput.value.trim()) {
     let url = playlistInput.value.trim();
@@ -272,7 +374,6 @@ savePlaylist.addEventListener("click", () => {
   closePlaylistModal();
 });
 
-// load playlist terakhir kalau ada
 if (localStorage.getItem("spotifyPlaylist")) {
   spotifyFrame.src = localStorage.getItem("spotifyPlaylist");
 }

@@ -2,9 +2,10 @@
   "name": "pomodoro-timer",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,9 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "electron": "^38.1.1",
+    "electron-packager": "^17.1.2"
   }
 }
